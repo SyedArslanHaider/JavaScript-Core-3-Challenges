@@ -5,26 +5,36 @@
 // =================
 
 // 1. Accept arguments
-
+const input = process.argv[2] || '';
 // how will you accept arguments?
 
 // 2. Make supplies for our speech bubble
 
-let topLine = '_';
-let bottomLine = '-';
-let saying = '';
+let topLine = '_'.repeat(input.length + 2); // Dynamic length based on input
+let bottomLine = '-'.repeat(input.length + 2);
+let saying = input;
 
 // 3. Make a cow that takes a string
 
 function cowsay(saying) {
-// how will you make the speech bubble contain the text?
-
-// where will the cow picture go?
-
-// how will you account for the parameter being empty?
-
+  if (!saying) {
+    saying = "Moo? (No input provided!)";
 }
+  const speechBubble = `
+  ${topLine}
+ < ${saying} >
+  ${bottomLine}`;
 
+    const cow = `
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||`;
+
+  // Combine and return the result
+  return speechBubble + cow;
+}
 //4. Pipe argument into cowsay function and return a cow
-
+console.log(cowsay(saying));
 // how will you log this to the console?
