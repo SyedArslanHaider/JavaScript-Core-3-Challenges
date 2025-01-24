@@ -7,8 +7,8 @@
     const creditUser = document.getElementById("credit-user");
     const creditPlatform = document.getElementById("credit-platform");
 
-    const openWeatherAPIKey = "d1eaa2d1ed85341168097afcc7cf28d6";
-    const unsplashAccessKey = "rBoeB3Y2d6uUxKOeYQwgYd7J-qsXePsoNjOT48AKc_8";
+    const openWeatherAPIKey = process.env.OPENWEATHER_API_KEY;
+    const unsplashAccessKey = process.env.UNSPLASH_ACCESS_KEY;
     let currentCity = "madrid"; // Default city
     let slideshowInterval; // Interval for cycling images
 
