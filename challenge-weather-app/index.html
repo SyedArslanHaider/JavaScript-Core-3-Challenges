@@ -9,41 +9,39 @@
   <title>Meteoropolis</title>
   <link rel="stylesheet" href="assets/globals.css">
   <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Structure -->
-  <main class="content">
-    <header class="header">
-      <h1 class="title">
-        <i>Meteor</i>
-        <i>opolis</i>
-      </h1>
+  <div class="container">
+    <header>
+      <h1>Weather & Photography</h1>
+      <p>Discover the weather and its beauty, powered by OpenWeatherMap and Unsplash</p>
     </header>
 
-    <figure class="photo" id="photo"></figure>
-
-    <div class="info">
-      <p class="info__item info__item--conditions" id="conditions"></p>
-      <p class="info__item info__item--credits">
-        <a href="#" id="credit-user"></a>
-        <span>on</span>
-        <a href="#" id="credit-platform">Unsplash</a>
-      </p>
-    </div>
-
-    <div class="thumbs" id="thumbs"></div>
-
-    <div class="controls">
-      <form class="search" id="search">
-        <label class="search__label" for="search-tf">City</label>
-        <input class="search__input" id="search-tf" name="city" placeholder="Enter city name" autocomplete="city" />
-        <button class="btn search__btn">Go</button>
+    <main>
+      <form id="search" class="search-form">
+        <input type="text" id="search-tf" placeholder="Enter a city (e.g., Madrid, Tokyo)" autocomplete="off"
+          required />
+        <button type="submit">Search</button>
       </form>
-    </div>
-  </main>
+      <section class="info">
+        <div id="conditions" class="weather-info">Loading weather...</div>
+        <div id="photo" class="photo-container">Loading...</div>
+      </section>
+      
+      <section id="thumbs" class="thumbnails"></section>
+    </main>
 
-  <!-- JS goes here -->
+    <footer>
+      <p>
+        Photo by <a id="credit-user" href="#" target="_blank">Photographer</a> on
+        <a id="credit-platform" href="#" target="_blank">Unsplash</a>
+      </p>
+      <p>Made by @Syed</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
